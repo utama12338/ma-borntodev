@@ -15,12 +15,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.set("views","/src/views")
-app.set("views engine","ejs")
+app.set("views","./src/views")
+app.set('view engine', 'ejs'); // หรือ 'pug', 'hbs' ฯลฯ
 app.use(express.static(path.join(__dirname,"/public/")))
 
 app.get("/", (req, res) => {
-  res.send("ชื่อมะ"); 
+  res.render('index',{username: `มะๆๆๆๆๆๆคนหล่อ`,cutomers:["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hannah", "Ivy", "Jack"]}); 
 });
 
 app.listen(port, () => {
