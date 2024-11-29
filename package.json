@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set DEBUG=app & node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "set DEBUG=* & node server.js"
+    "start": "set DEBUG=app & nodemon server.js",
+        "debug": "set DEBUG=* & nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,12 @@
     "express": "^4.21.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.7"
+  },
+  "nodemonConfig":{
+    "restarttable":"rs",
+    "delay":2000,
+    "env":{
+      "PORT":3008
+    }
   }
 }

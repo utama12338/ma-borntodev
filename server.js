@@ -3,7 +3,7 @@ import express from "express"; // ใช้ import แทน require
 import chalk from "chalk";
 import debug from "debug"; // แก้ไข import debug
 const app = express();
-const port = 3008;
+const port = process.env.PORT;
 import morgan from "morgan";
 import path from 'path'
 app.use(morgan('combined'));
@@ -25,3 +25,11 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   debug("asd" + chalk.red.bgYellow("  :  " + port));
 });
+
+
+  setTimeout(()=>{
+
+
+
+  },3000)
+
